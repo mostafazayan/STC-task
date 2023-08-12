@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ProductService } from 'src/app/services/employee.service';
+import { ProductService } from 'src/app/services/product.service';
 const images = './assets/';
 
 const image = (path: any) => images + path;

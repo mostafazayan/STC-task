@@ -29,7 +29,7 @@ export class ProductService {
     return this._http.get(`${basUrl}/category/${category}`);
   }
 
-  deleteEmployee(id: number): Observable<any> {
+  deleteProduct(id: number): Observable<any> {
     return this._http.delete(`${basUrl}/${id}`);
   }
 }

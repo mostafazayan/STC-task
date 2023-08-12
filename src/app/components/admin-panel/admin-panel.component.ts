@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductAddEditComponent } from '../product-add-edit/product-add-edit.component';
-import { ProductService } from '../../services/employee.service';
+import { ProductService } from '../../services/product.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -71,8 +71,8 @@ export class AdminPanelComponent implements OnInit {
     }
   }
 
-  deleteEmployee(id: number) {
-    this._empService.deleteEmployee(id).subscribe({
+  deleteProduct(id: number) {
+    this._empService.deleteProduct(id).subscribe({
       next: (res) => {
         this._coreService.openSnackBar('Employee deleted!', 'done');
         this.getProductList();

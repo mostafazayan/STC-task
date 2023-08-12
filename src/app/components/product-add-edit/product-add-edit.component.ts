@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CoreService } from '../../core/core.service';
-import { ProductService } from '../../services/employee.service';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-add-edit',
