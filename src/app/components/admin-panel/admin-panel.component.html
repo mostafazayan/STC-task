@@ -1,0 +1,96 @@
+<div class="admin-panel">
+
+  <mat-toolbar color="primary">
+    <span>{{'AdminInfo.header.name' | translate}}</span>
+    <span class="example-spacer"></span>
+    <div class="actions">
+      <button mat-raised-button (click)="openAddEditEmpForm()">
+        {{'AdminInfo.header.add_product' | translate}}
+      </button>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>logout</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="onLogout()">
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+
+
+
+  <div class="main-body">
+
+    <mat-form-field>
+      <mat-label>{{'AdminInfo.table.filter.label' | translate}}</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="{{'AdminInfo.table.filter.placeholder' | translate}}" #input>
+    </mat-form-field>
+
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'AdminInfo.table.content.id' | translate}} </th>
+          <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+        </ng-container>
+
+        <!-- Progress Column -->
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'AdminInfo.table.content.title' | translate}} </th>
+          <td mat-cell *matCellDef="let row"> {{row.title}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'AdminInfo.table.content.price' | translate}} </th>
+        <td mat-cell *matCellDef="let row"> {{row.price}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'AdminInfo.table.content.category' | translate}} </th>
+        <td mat-cell *matCellDef="let row"> {{row.category}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'AdminInfo.table.content.image' | translate}} </th>
+        <td mat-cell *matCellDef="let row"> <img src={{row.image}} width="50" alt=""></td>
+      </ng-container>
+
+      <ng-container matColumnDef="rating">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'AdminInfo.table.content.rating' | translate}} </th>
+        <td mat-cell *matCellDef="let row"> {{row.rating.rate}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="count">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'AdminInfo.table.content.count' | translate}} </th>
+        <td mat-cell *matCellDef="let row"> {{row.rating.count}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'AdminInfo.table.content.actions' | translate}} </th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-icon-button color="primary" (click)="openEditForm(row)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteEmployee(row.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">{{'AdminInfo.table.filter.no_result' | translate}}"{{input.value}}"</td>
+      </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>
+</div>
+
+
+</div>

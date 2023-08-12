@@ -1,0 +1,39 @@
+{
+  "dir": "rtl",
+  "logout": "تسجيل الخروج",
+  "title": "المتجر",
+  "categories": "الفئات",
+  "login": {
+    "login": "تسجيل الدخول",
+    "email": "البريد الالكتروني",
+    "password": "الرقم السري"
+  },
+  "AdminInfo": {
+    "header": {
+      "add_product": "اضافة منتج",
+      "name": "لوحة التحكم"
+    },
+    "table": {
+      "filter": {
+        "label": "ابحث",
+        "placeholder": "اكتب هنا",
+        "no_result": "لا يوجد بيانات توافق هذا البحث"
+      },
+      "content": {
+        "id": "رقم تعريفي",
+        "title": "عنوان تعريفي",
+        "price": "السعر",
+        "category": "الفئه",
+        "image": "الصوره",
+        "rating": "التقيم",
+        "count": "العدد",
+        "actions": "أجراءات",
+        "product": "منتج",
+        "edit": "تعديل ",
+        "add": "اضافة ",
+        "cancel": "الغاء"
+
+      }
+    }
+  }
+}

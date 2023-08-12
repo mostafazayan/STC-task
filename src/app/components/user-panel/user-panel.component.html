@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div id="app-container">
+  <div class="container">
+    <h1>{{"categories"| translate}}</h1>
+    <mat-button-toggle-group
+      name="fontStyle"
+      value="All"
+      aria-label="Font Style"
+    >
+      <mat-button-toggle value="All Products" (click)="getProducts()">
+        <div class="category-content">
+          <span class="title">All Products</span>
+        </div>
+      </mat-button-toggle>
+      <mat-button-toggle *ngFor="let item of categories" value="item" (click)="getProductsByCategory(item)">
+        <div class="category-content">
+          <span class="title">{{item}}</span>
+        </div>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+    <div *ngIf="isLoading" class="loading">
+      <mat-spinner></mat-spinner>
+      <h2>Loading...</h2>
+    </div>
+
+    <h3 class="empty-message" *ngIf="products.length === 0 && !isLoading">
+      There is no items
+    </h3>
+    <div class="items" *ngIf="!isLoading">
+      <app-product
+        *ngFor="let product of products"
+        [product]="product"
+        [products]="products"
+      ></app-product>
+    </div>
+
+  </div>
+</div>

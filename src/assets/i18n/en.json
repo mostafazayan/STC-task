@@ -1,0 +1,38 @@
+{
+  "dir": "ltr",
+  "logout": "Logout",
+  "title": "The Store",
+  "categories": "Categories",
+  "login": {
+    "login": "Login",
+    "email": "Email",
+    "password": "Password"
+  },
+  "AdminInfo": {
+    "header": {
+      "add_product": "Add Product",
+      "name": "Store"
+    },
+    "table": {
+      "filter": {
+        "label": "Search",
+        "placeholder": "Type here",
+        "no_result": "No data matching the filter"
+      },
+      "content": {
+        "id": "ID",
+        "title": "Title",
+        "price": "Price",
+        "category": "Category",
+        "image": "Image",
+        "rating": "Rating",
+        "count": "Count",
+        "actions": "Actions",
+        "add": "Add",
+        "edit": "Edit",
+        "product": "Product",
+        "cancel": "Cancel"
+      }
+    }
+  }
+}

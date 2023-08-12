@@ -1,0 +1,44 @@
+<div mat-dialog-title>
+    <h1> <span *ngIf="data">{{'AdminInfo.table.content.edit' | translate}}</span> <span *ngIf="!data">{{'AdminInfo.table.content.add' | translate}}</span> {{'AdminInfo.table.content.product' | translate}}</h1>
+</div>
+<form [formGroup]="productForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>{{'AdminInfo.table.content.title' | translate}}</mat-label>
+                <input matInput type="text" placeholder="Type here" formControlName="title">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>{{'AdminInfo.table.content.price' | translate}}</mat-label>
+                <input matInput placeholder="Type here" formControlName="price">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>{{'AdminInfo.table.content.category' | translate}}</mat-label>
+            <input matInput type="text" placeholder="Type here" formControlName="category">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>{{'AdminInfo.table.content.image' | translate}}</mat-label>
+            <input matInput type="text" placeholder="Type here" formControlName="image">
+          </mat-form-field>
+        </div>
+
+        <div class="row" formGroupName="rating">
+            <mat-form-field appearance="outline">
+                <mat-label>{{'AdminInfo.table.content.rating' | translate}}</mat-label>
+                <input matInput type="text" placeholder="Type here" formControlName="rate">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>{{'AdminInfo.table.content.edit' | translate}}</mat-label>
+                <input matInput placeholder="Type here" formControlName="count">
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">{{'AdminInfo.table.content.cancel' | translate}}</button>
+        <button mat-raised-button color="primary" type="submit"><span *ngIf="data">{{'AdminInfo.table.content.edit' | translate}}</span> <span *ngIf="!data">{{'AdminInfo.table.content.add' | translate}}</span> </button>
+    </div>
+</form>

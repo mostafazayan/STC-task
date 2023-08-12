@@ -1,0 +1,21 @@
+<div class="layout" [dir]="'dir' | translate">
+
+  <div class="header">
+    <div class="content">
+
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>language</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="changeLanguage('ar')">
+        <span>عربي</span>
+      </button>
+      <button mat-menu-item (click)="changeLanguage('en')">
+        <span>English</span>
+      </button>
+    </mat-menu>
+  </div>
+  </div>
+  <router-outlet></router-outlet>
+
+</div>

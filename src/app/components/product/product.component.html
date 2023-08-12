@@ -1,0 +1,25 @@
+<div id="product">
+  <div class="item">
+    <div  alt="">
+      <img class="product-image" src="{{product.image}}" alt="">
+    </div>
+    <div class="content">
+      <h2>{{ product.name }}</h2>
+      <h3>{{ product.description }}</h3>
+      <p class="type">{{ product.category }}</p>
+      <p class="currency">
+        $<span>{{ product.price | number }}</span>
+      </p>
+    </div>
+    <div class="actions">
+      <button
+        (click)="openDetails(product.id)"
+        mat-button
+        class="cardBtn"
+        aria-label="Example icon-button with heart icon"
+      >
+        <mat-icon>visibility</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
